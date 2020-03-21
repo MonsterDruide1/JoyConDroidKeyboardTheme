@@ -13,9 +13,46 @@ function send(key){
     case 'a':
       posY = 2;
       break;
+    case 'b':
+      posX = 4;
+      posY = 3;
+      break;
+    case 'c':
+      posX = 2;
+      posY = 3;
+      break;
+    case 'd':
+      posX = 2;
+      posY = 2;
+      break;
+    case 'e':
+      posX = 2;
+      posY = 1;
+      break;
+    case 'f':
+      posX = 3;
+      posY = 2;
+      break;
+    case 'g':
+      posX = 4;
+      posY = 2;
+      break;
+    case 'h':
+      posX = 5;
+      posY = 2;
+      break;
     default:
-      log("Key not found: "+key+", keyCode: "+key.code+", keyName: "+key.key);
-      return;
+      switch(key.keyCode){
+        case 8:
+        case 46:
+          window.joyconJS["onB"](true);
+          sleep(30);
+          window.joyconJS["onB"](false);
+          return;
+        default:
+          log("Key not found: "+key+", keyCode: "+key.keyCode+", keyName: "+key.key);
+          return;
+      }
   }
   
   for(var i=0;i<posX;i++){
