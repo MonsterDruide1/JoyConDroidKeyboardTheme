@@ -1,5 +1,3 @@
-var gMO = moment();
-
 function log(text) {
 	console.log(text);
 }
