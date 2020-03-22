@@ -1,9 +1,8 @@
 function log(text) {
 	console.log(text);
+	document.getElementById("log").value += "\n"+text;
 }
 
-// Log version
-log("V 1.0.0");
 
 // Redirect errors to logging
 window.onerror = function(message) {
@@ -11,6 +10,8 @@ window.onerror = function(message) {
 }
 
 window.onload = function(){
+  // Log version
+  log("V 1.0.0");
   document.getElementById("textToSend").onkeypress = function(key){
     send(key);
   };

@@ -78,4 +78,6 @@ function send(key){
   window.joyconJS["onLeft"](true);
   sleep(1000);
   window.joyconJS["onLeft"](false);
+  
+  log("DONE: "+key.key);
 }
