@@ -12,7 +12,7 @@ window.onerror = function(message) {
 window.onload = function(){
   // Log version
   log("V 1.0.0");
-  document.getElementById("textToSend").onkeyup = function(key){
+  document.getElementById("textToSend").addEventListener("keyup",function(key){
     send(key);
-  };
+  });
 }
