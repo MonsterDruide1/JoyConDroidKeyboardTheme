@@ -13,6 +13,7 @@ window.onload = function(){
   // Log version
   log("V 1.0.0");
   document.getElementById("textToSend").addEventListener("keyup",function(key){
+    log("trigger");
     send(key);
   });
 }
