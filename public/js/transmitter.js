@@ -7,15 +7,19 @@ function sleep(ms) {
 }
 
 function send(key){
-  if((typeof key != "number" && typeof key != "undefined") && key == key.toUpperCase()){
-    window.joyconJS["onLeftJoystick"](true);
-    sleep(100);
-    window.joyconJS["onLeftJoystick"](false);
-    log("Uppercase: "+key+" restarting with "+key.toLowerCase());
-    send(key.toLowerCase());
-    window.joyconJS["onLeftJoystick"](false);
-    sleep(100);
-    window.joyconJS["onLeftJoystick"](true);
+  if(typeof key == "string"){
+    log("type: string");
+    if(key == key.toUpperCase()){
+      log("YAY! UPPERCASE!");
+      window.joyconJS["onLeftJoystick"](true);
+      sleep(100);
+      window.joyconJS["onLeftJoystick"](false);
+      log("Uppercase: "+key+" restarting with "+key.toLowerCase());
+      send(key.toLowerCase());
+      window.joyconJS["onLeftJoystick"](false);
+      sleep(100);
+      window.joyconJS["onLeftJoystick"](true);
+    }
   }
   
   var posX = 0;
