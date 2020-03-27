@@ -57,19 +57,19 @@ function send(key){
   
   for(var i=0;i<posX;i++){
     window.joyconJS["onRight"](true);
-    sleep(30);
+    sleep(100);
     window.joyconJS["onRight"](false);
-    sleep(30);
+    sleep(100);
   }
   for(var i=0;i<posY;i++){
     window.joyconJS["onDown"](true);
-    sleep(30);
+    sleep(100);
     window.joyconJS["onDown"](false);
-    sleep(30);
+    sleep(100);
   }
   
   window.joyconJS["onA"](true);
-  sleep(30);
+  sleep(100);
   window.joyconJS["onA"](false);
   
   window.joyconJS["onUp"](true);
