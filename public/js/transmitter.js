@@ -41,6 +41,76 @@ function send(key){
       posX = 5;
       posY = 2;
       break;
+    case 'i':
+      posX = 7;
+      posY = 1;
+      break;
+    case 'j':
+      posX = 6;
+      posY = 2;
+      break;
+    case 'k':
+      posX = 7;
+      posY = 2;
+      break;
+    case 'l':
+      posX = 8;
+      posY = 2;
+      break;
+    case 'm':
+      posX = 6;
+      posY = 3;
+      break;
+    case 'n':
+      posX = 5;
+      posY = 3;
+      break;
+    case 'o':
+      posX = 8;
+      posY = 1;
+      break;
+    case 'p':
+      posX = 9;
+      posY = 1;
+      break;
+    case 'q':
+      posY = 1;
+      break;
+    case 'r':
+      posX = 3;
+      posY = 1;
+      break;
+    case 's':
+      posX = 1;
+      posY = 2;
+      break;
+    case 't':
+      posX = 4;
+      posY = 1;
+      break;
+    case 'u':
+      posX = 6;
+      posY = 1;
+      break;
+    case 'v':
+      posX = 3;
+      posY = 3;
+      break;
+    case 'w':
+      posX = 1;
+      posY = 1;
+      break;
+    case 'x':
+      posX = 1;
+      posY = 3;
+      break;
+    case 'y':
+      posY = 3;
+      break;
+    case 'z':
+      posX = 5;
+      posY = 1;
+      break;
     default:
       switch((key+"").charCodeAt()){
         case 8:
