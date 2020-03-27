@@ -3,6 +3,7 @@ function log(text) {
 	document.getElementById("log").value += "\n"+text;
 }
 
+var noOfChars = 0;
 
 // Redirect errors to logging
 window.onerror = function(message) {
@@ -14,11 +15,13 @@ window.onload = function(){
   log("V 1.0.0");
   document.getElementById("textToSend").addEventListener("keyup",function(key){
     log("trigger");
-    if(key.keyCode != 229){
-      send(key.keyCode);
+    if(noOfChars > key.target.value.length){
+      send(8); //backspace
     }
     else {
       send(key.target.value.charAt(event.target.selectionStart - 1));
     }
+    noOfChars = key.target.value.length;
+    log(noOfChars);
   });
 }
