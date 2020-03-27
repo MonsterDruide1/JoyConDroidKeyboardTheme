@@ -10,6 +10,12 @@ function send(key){
   var posX = 0;
   var posY = 0;
   switch(key){
+    case 8:
+    case 46:
+      window.joyconJS["onB"](true);
+      sleep(30);
+      window.joyconJS["onB"](false);
+      return;
     case 'a':
       posY = 2;
       break;
@@ -112,15 +118,9 @@ function send(key){
       posY = 1;
       break;
     default:
+      log("Key not found: "+key+", keyCode: "+(key+"").charCodeAt());
       switch((key+"").charCodeAt()){
-        case 8:
-        case 46:
-          window.joyconJS["onB"](true);
-          sleep(30);
-          window.joyconJS["onB"](false);
-          return;
         default:
-          log("Key not found: "+key+", keyCode: "+(key+"").charCodeAt());
           return;
       }
   }
@@ -143,10 +143,10 @@ function send(key){
   window.joyconJS["onA"](false);
   
   window.joyconJS["onUp"](true);
-  sleep(1000);
+  sleep(500);
   window.joyconJS["onUp"](false);
   window.joyconJS["onLeft"](true);
-  sleep(1000);
+  sleep(1500);
   window.joyconJS["onLeft"](false);
   
   log("DONE: "+key);

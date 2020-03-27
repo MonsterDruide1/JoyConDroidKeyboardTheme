@@ -14,6 +14,11 @@ window.onload = function(){
   log("V 1.0.0");
   document.getElementById("textToSend").addEventListener("keyup",function(key){
     log("trigger");
-    send(key.target.value.charAt(event.target.selectionStart - 1));
+    if(key.keyCode != 229){
+      send(key.keyCode);
+    }
+    else {
+      send(key.target.value.charAt(event.target.selectionStart - 1));
+    }
   });
 }
