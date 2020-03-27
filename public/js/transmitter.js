@@ -7,7 +7,7 @@ function sleep(ms) {
 }
 
 function send(key){
-  if(key == key.toUpperCase()){
+  if((typeof key != "number" && typeof key != "undefined") && key == key.toUpperCase()){
     window.joyconJS["onLeftJoystick"](true);
     sleep(100);
     window.joyconJS["onLeftJoystick"](false);
