@@ -7,6 +7,16 @@ function sleep(ms) {
 }
 
 function send(key){
+  if(key == key.toUpperCase()){
+    window.joyconJS["onLeftJoystick"](true);
+    sleep(100);
+    window.joyconJS["onLeftJoystick"](false);
+    send(key.toLowerCase());
+    window.joyconJS["onLeftJoystick"](false);
+    sleep(100);
+    window.joyconJS["onLeftJoystick"](true);
+  }
+  
   var posX = 0;
   var posY = 0;
   switch(key){
