@@ -11,6 +11,7 @@ function send(key){
     window.joyconJS["onLeftJoystick"](true);
     sleep(100);
     window.joyconJS["onLeftJoystick"](false);
+    log("Uppercase: "+key+" restarting with "+key.toLowerCase());
     send(key.toLowerCase());
     window.joyconJS["onLeftJoystick"](false);
     sleep(100);
