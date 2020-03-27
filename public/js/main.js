@@ -14,6 +14,6 @@ window.onload = function(){
   log("V 1.0.0");
   document.getElementById("textToSend").addEventListener("keyup",function(key){
     log("trigger");
-    send(key);
+    send(key.target.value.charAt(event.target.selectionStart - 1));
   });
 }
