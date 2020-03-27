@@ -33,6 +33,8 @@ if (!window.joyconJS) {
 	window.joyconJS.onDown = nullFunc;
 	window.joyconJS.onLeftJoystick = nullFunc;
 	window.joyconJS.onRightJoystick = nullFunc;
+	window.joyconJS.onRightJoystickPressed = nullFunc;
+	window.joyconJS.onLeftJoystickPressed = nullFunc;
 
 	window.joyconJS.setMotionControlsEnabled = nullFunc;
 

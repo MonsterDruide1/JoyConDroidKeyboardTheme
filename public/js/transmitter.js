@@ -8,17 +8,16 @@ function sleep(ms) {
 
 function send(key){
   if(typeof key == "string"){
-    log("type: string");
     if(key == key.toUpperCase()){
       log("YAY! UPPERCASE!");
-      window.joyconJS["onLeftJoystick"](true);
+      window.joyconJS["onLeftJoystickPressed"](true);
       sleep(100);
-      window.joyconJS["onLeftJoystick"](false);
+      window.joyconJS["onLeftJoystickPressed"](false);
       log("Uppercase: "+key+" restarting with "+key.toLowerCase());
       send(key.toLowerCase());
-      window.joyconJS["onLeftJoystick"](false);
+      window.joyconJS["onLeftJoystickPressed"](false);
       sleep(100);
-      window.joyconJS["onLeftJoystick"](true);
+      window.joyconJS["onLeftJoystickPressed"](true);
     }
   }
   
