@@ -4,6 +4,7 @@ function log(text) {
 }
 
 var noOfChars = 0;
+var pos = [0,0];
 
 // Redirect errors to logging
 window.onerror = function(message) {
@@ -16,12 +17,11 @@ window.onload = function(){
   document.getElementById("textToSend").addEventListener("keyup",function(key){
     log("trigger");
     if(noOfChars > key.target.value.length){
-      send(8); //backspace
+      send(8,pos); //backspace
     }
     else {
-      send(key.target.value.charAt(event.target.selectionStart - 1));
+      pos = send(key.target.value.charAt(event.target.selectionStart - 1),pos);
     }
     noOfChars = key.target.value.length;
-    log(noOfChars);
   });
 }

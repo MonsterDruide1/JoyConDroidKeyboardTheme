@@ -6,7 +6,7 @@ function sleep(ms) {
   } while (currentDate - date < ms);
 }
 
-function send(key){
+function send(key,pos){
   if(typeof key == "string"){
     if(key == key.toUpperCase()){
       log("YAY! UPPERCASE!");
@@ -130,22 +130,30 @@ function send(key){
       break;
     default:
       log("Key not found: "+key+", keyCode: "+(key+"").charCodeAt());
-      switch((key+"").charCodeAt()){
-        default:
-          return;
-      }
   }
   
-  for(var i=0;i<posX;i++){
+  for(var i=pos[0];i<posX;i++){
     window.joyconJS["onRight"](true);
     sleep(100);
     window.joyconJS["onRight"](false);
     sleep(100);
   }
-  for(var i=0;i<posY;i++){
+  for(var i=pos[0];i>posX;i--){
+    window.joyconJS["onLeft"](true);
+    sleep(100);
+    window.joyconJS["onLeft"](false);
+    sleep(100);
+  }
+  for(var i=pos[1];i<posY;i++){
     window.joyconJS["onDown"](true);
     sleep(100);
     window.joyconJS["onDown"](false);
+    sleep(100);
+  }
+  for(var i=pos[1];i>posY;i--){
+    window.joyconJS["onUp"](true);
+    sleep(100);
+    window.joyconJS["onUp"](false);
     sleep(100);
   }
   
@@ -153,12 +161,7 @@ function send(key){
   sleep(100);
   window.joyconJS["onA"](false);
   
-  window.joyconJS["onUp"](true);
-  sleep(500);
-  window.joyconJS["onUp"](false);
-  window.joyconJS["onLeft"](true);
-  sleep(1500);
-  window.joyconJS["onLeft"](false);
-  
   log("DONE: "+key);
+  
+  return [posX,posY];
 }
